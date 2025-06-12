@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy import Column, Integer, ForeignKey, DateTime, JSON, Float, String, Enum
 from sqlalchemy.orm import relationship
@@ -17,7 +17,7 @@ class Check(Base):
     rest = Column(Float)
     payment_type = Column(Enum(PaymentType), nullable=False)
     payment_amount = Column(Float)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
     additional_data = Column(JSON, nullable=True)
     public_token = Column(String, unique=True, default=lambda: uuid.uuid4().hex)
 
