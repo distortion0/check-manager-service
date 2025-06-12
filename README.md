@@ -22,8 +22,8 @@ details. (public view as well)
 
 1. Clone the repo:  
    ```bash
-   git clone <repo-url>
-   cd <repo-folder>
+   git clone https://github.com/distortion0/check-manager-service.git
+   cd check-manager-service
    ```
 2. Create a .env file and configure environment variables 
 (see .env.example for reference)
