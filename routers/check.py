@@ -75,7 +75,7 @@ def read_check(check_id: int, db: Session = Depends(get_db), current_user: User 
     return db_check
 
 
-@router.get("/public/{token}", response_class=Response, include_in_schema=False)
+@router.get("/public/{token}", response_class=Response)
 def public_check_view(token: str, line_width: int = Query(32, gt=10, le=80), db: Session = Depends(get_db)):
     """
     Public endpoint to view a check by its public token, formatted as plain text.
